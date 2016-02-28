@@ -73,6 +73,8 @@ int OptionsDialog::exec_tools()
 void OptionsDialog::read_fields()
 {
     QSettings settings;
+    ui->language->addItems(settings.value("options/languages","English_en").toString().split(","));
+    ui->language->setCurrentIndex(ui->language->findText(settings.value("options/language","English_en").toString()));
     ui->spinThreads->setValue(settings.value("options/threads", DEFAULT_THREAD_COUNT).toInt());
     ui->chkHideFormats->setChecked(settings.value("options/hideformats", true).toBool());
     ui->chkCheckUpdates->setChecked(settings.value("options/check_update_on_startup",
@@ -97,6 +99,7 @@ void OptionsDialog::write_fields()
     settings.setValue("options/hideformats", ui->chkHideFormats->isChecked());
     settings.setValue("options/check_update_on_startup", ui->chkCheckUpdates->isChecked());
     settings.setValue("options/auto_start_conversion", ui->chkAutoStartConversion->isChecked());
+    settings.setValue("options/language",ui->language->currentText());
 
 #ifndef TOOLS_IN_DATA_PATH
     // table to ExePath
