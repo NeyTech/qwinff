@@ -166,6 +166,14 @@ int main(int argc, char *argv[])
         QDir().mkpath(settings_dir);
         QSettings::setDefaultFormat(QSettings::IniFormat);
         QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings_dir);
+
+        QSettings setting;
+        QString app_path = app.applicationDirPath();
+        QDir translateDir(app_path + "/translations/");
+        QStringList languages = translateDir.entryList( QDir::Files | QDir::NoDotAndDotDot);
+
+        setting.setValue("options/languages",languages.join(","));
+
         qDebug() << "Setting path: " + settings_dir;
     }
 
@@ -179,12 +187,21 @@ int main(int argc, char *argv[])
 
     // Setup translation
     QTranslator translator;
-    QString translation_filename = find_translation_file();
-    if (!translation_filename.isEmpty()) {
+//    QString translation_filename = find_translation_file();
+//    if (!translation_filename.isEmpty()) {
+//        qDebug() << "Translation file: " << translation_filename;
+//        translator.load(translation_filename);
+//        app.installTranslator(&translator);
+//    }
+
+    QSettings setting;
+    QString translation_filename = setting.value("options/language").toString();
+    if (!translation_filename.isEmpty() && translation_filename != "English_en") {
         qDebug() << "Translation file: " << translation_filename;
-        translator.load(translation_filename);
+        translator.load(translation_filename,"translations");
         app.installTranslator(&translator);
     }
+
 
     // Load translation for Qt library
     QTranslator translator_qt;
