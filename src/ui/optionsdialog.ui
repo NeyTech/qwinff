@@ -23,38 +23,58 @@
       <attribute name="title">
        <string>General</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QCheckBox" name="chkCheckUpdates">
-         <property name="text">
-          <string>Check for updates on program startup</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkAutoStartConversion">
-         <property name="toolTip">
-          <string>Automatically start conversion after adding files to the list.</string>
-         </property>
-         <property name="text">
-          <string>Start conversion automatically</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+      <widget class="QCheckBox" name="chkCheckUpdates">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>290</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Check for updates on program startup</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chkAutoStartConversion">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>37</y>
+         <width>237</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Automatically start conversion after adding files to the list.</string>
+       </property>
+       <property name="text">
+        <string>Start conversion automatically</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="language">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>63</y>
+         <width>200</width>
+         <height>30</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="langiage_label">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>66</y>
+         <width>81</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Language :</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tabFFmpeg">
       <attribute name="title">
