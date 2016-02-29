@@ -33,7 +33,7 @@
     </message>
     <message>
         <source>QWinFF is a gui frontend for FFmpeg.</source>
-        <translation>QWinFF is a gui frontend for FFmpeg.</translation>
+        <translation>QwinFF یه محیط گرافیکی برای FFmpeg هست.</translation>
     </message>
     <message>
         <source>Programming: %1</source>
@@ -58,7 +58,7 @@
     </message>
     <message>
         <source>FFmpeg presets were taken from WinFF.</source>
-        <translation>FFmpeg presets were taken from WinFF.</translation>
+        <translation>تنظیمات FFmpeg از WinFF گرقته شده.</translation>
     </message>
     <message>
         <source>Japanese</source>
@@ -856,11 +856,11 @@
     </message>
     <message>
         <source>Failed to load preset file. The application will quit now.</source>
-        <translation>Laden der Voreinstellungen fehlgeschlaten. Das Programm wird nun beendet.</translation>
+        <translation>خطا در بارگزاری فایل preset . برنامه بسته خواهد شد.</translation>
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>Ausführungszeit: %1 h %2 m %3 s</translation>
+        <translation>زمان باقی مانده: %1 h %2 m %3 s</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
@@ -944,17 +944,17 @@
     <message>
         <source>Shutdown immediately</source>
         <extracomment>Shutdown the computer</extracomment>
-        <translation>Shutdown immediately</translation>
+        <translation>Shutdown فوری</translation>
     </message>
     <message>
         <source>Suspend immediately</source>
         <extracomment>Suspend the computer (sleep to ram, standby)</extracomment>
-        <translation>Suspend immediately</translation>
+        <translation>Suspend فوری</translation>
     </message>
     <message>
         <source>Hibernate immediately</source>
         <extracomment>Hibernate the computer (sleep to disk, completely poweroff)</extracomment>
-        <translation>Hibernate immediately</translation>
+        <translation>hibernate فوری</translation>
     </message>
     <message>
         <source>Shutdown</source>
