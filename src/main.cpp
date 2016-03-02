@@ -30,32 +30,7 @@
 #include "services/notification.h"
 #include "services/constants.h"
 
-/**
- * @brief Find the absolute path of the translation of the current locale.
- *
- * @return the absolute path of the translation or an empty string if file not found.
- * @note This function must be called after @c Paths has been initialized.
- */
-static QString find_translation_file()
-{
-    QString locale = QLocale::system().name(); // language code + country code (xx_XX)
-    QString language = locale.mid(0, 2); // language code (first two chars of locale)
-    QString translation_file_basename =
-            QDir(Paths::translationPath()).absoluteFilePath("qwinff_");
 
-    // look for qwinff_xx_XX.qm in the translation directory
-    QString translation_language_country = translation_file_basename + locale + ".qm";
-    if (QFile(translation_language_country).exists())
-        return translation_language_country;
-
-    // look for qwinff_xx.qm in the translation directory
-    QString translation_language = translation_file_basename + language + ".qm";
-    if (QFile(translation_language).exists())
-        return translation_language;
-
-    // translation for current locale not found, return empty string
-    return "";
-}
 
 /**
  * @brief Load program constants from constants.xml.
@@ -171,6 +146,7 @@ int main(int argc, char *argv[])
         QString app_path = app.applicationDirPath();
         QDir translateDir(app_path + "/translations/");
         QStringList languages = translateDir.entryList( QDir::Files | QDir::NoDotAndDotDot);
+        languages.append("English_en");
 
         setting.setValue("options/languages",languages.join(","));
 
@@ -187,12 +163,6 @@ int main(int argc, char *argv[])
 
     // Setup translation
     QTranslator translator;
-//    QString translation_filename = find_translation_file();
-//    if (!translation_filename.isEmpty()) {
-//        qDebug() << "Translation file: " << translation_filename;
-//        translator.load(translation_filename);
-//        app.installTranslator(&translator);
-//    }
 
     QSettings setting;
     QString translation_filename = setting.value("options/language").toString();
