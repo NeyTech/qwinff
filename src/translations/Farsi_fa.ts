@@ -860,7 +860,7 @@
     </message>
     <message>
         <source>Elapsed Time: %1 h %2 m %3 s</source>
-        <translation>زمان باقی مانده: %1 h %2 m %3 s</translation>
+        <translation>زمان سپری شده: %1 h %2 m %3 s</translation>
     </message>
     <message>
         <source>Converting %1/%2</source>
